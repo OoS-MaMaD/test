@@ -7,9 +7,17 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "watch-test",
-	Short: "test",
-	Long: `ttttttttttteeeeeeeeeeeeeeeeesssssssssssssssstttttttttttttttttttt`,
+	Use: "watchtower",
+	Short: `Usage:
+	watchtower-client [flags]`,
+	Long: `Usage:
+  watchtower-client [flags]
+
+Flags:
+  -login      				Authenticate and store tokens
+  -programs   				Retrieve programs data
+  -http [program_number] 		Retrieve subdomains of program_number
+  -h          				Display help`,
 }
 
 func Execute() {
@@ -17,8 +25,4 @@ func Execute() {
 	if err != nil {
 		os.Exit(1)
 	}
-}
-
-func init() {
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
